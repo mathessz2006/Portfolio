@@ -24,6 +24,28 @@ const projects = [
     icon: GraduationCap,
     gradient: "from-indigo-500/20 via-blue-400/10 to-cyan-300/20",
   },
+  {
+    title: "Birthday Reminder WebApp",
+    type: "Self Project",
+    description:
+      "Full-stack web app with Firebase auth, Firestore database, and Email/SMS reminders with 1–30 days advanced scheduling. Dashboard with search, filter, sort and upcoming birthday views.",
+    tech: ["React.js", "Firebase", "Firestore", "GitHub Pages"],
+    live: "https://mathessz2006.github.io/birthday-remind/",
+    repo: "https://github.com/mathessz2006",
+    icon: Cake,
+    gradient: "from-pink-500/20 via-rose-400/10 to-orange-300/20",
+  },
+  {
+    title: "Birthday Reminder WebApp",
+    type: "Self Project",
+    description:
+      "Full-stack web app with Firebase auth, Firestore database, and Email/SMS reminders with 1–30 days advanced scheduling. Dashboard with search, filter, sort and upcoming birthday views.",
+    tech: ["React.js", "Firebase", "Firestore", "GitHub Pages"],
+    live: "https://mathessz2006.github.io/birthday-remind/",
+    repo: "https://github.com/mathessz2006",
+    icon: Cake,
+    gradient: "from-pink-500/20 via-rose-400/10 to-orange-300/20",
+  },
 ];
 
 export function Projects() {
@@ -32,9 +54,9 @@ export function Projects() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="Projects" title="Featured work I've built" />
         <div className="mt-12 grid md:grid-cols-2 gap-6">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
             <article
-              key={p.title}
+              key={`${p.title}-${i}`}
               className="group relative rounded-3xl border border-border bg-card overflow-hidden shadow-card hover:shadow-soft transition"
             >
               <div
