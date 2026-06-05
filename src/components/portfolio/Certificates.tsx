@@ -22,9 +22,10 @@ const certs = [
   },
   {
     icon: Keyboard,
-    title: "Junior Grade English Typewriting",
-    issuer: "First Class with Distinction",
-    year: "2022",
+    title: "Junior Grade Typewriting English",
+    issuer: "Government Technical Examinations, Tamil Nadu",
+    detail: "30 Words per Minute — First Class with Distinction",
+    year: "2024",
   },
   {
     icon: Trophy,
@@ -61,6 +62,9 @@ export function Certificates() {
                 <div>
                   <h3 className="font-semibold leading-snug">{c.title}</h3>
                   <p className="text-sm text-muted-foreground mt-0.5">{c.issuer}</p>
+                  {c.detail ? (
+                    <p className="text-xs text-muted-foreground mt-1">{c.detail}</p>
+                  ) : null}
                 </div>
                 <span className="text-xs text-muted-foreground shrink-0 mt-1">{c.year}</span>
               </div>
