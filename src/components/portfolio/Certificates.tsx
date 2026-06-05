@@ -1,5 +1,7 @@
 import { Award, BadgeCheck, Code2, Keyboard, Trophy } from "lucide-react";
 import { SectionHeading } from "./About";
+import certificateTypewriting from "@/assets/certificate-typewriting.jpeg";
+import certificateForage from "@/assets/certificate-forage.jpeg";
 
 const certs = [
   {
@@ -26,6 +28,7 @@ const certs = [
     issuer: "Government Technical Examinations, Tamil Nadu",
     detail: "30 Words per Minute — First Class with Distinction",
     year: "2024",
+    photo: certificateTypewriting,
   },
   {
     icon: Trophy,
@@ -38,6 +41,7 @@ const certs = [
     title: "Software Engineering Job Simulation",
     issuer: "Forage",
     year: "2024",
+    photo: certificateForage,
   },
 ];
 
@@ -55,8 +59,16 @@ export function Certificates() {
               key={c.title}
               className="group rounded-2xl border border-border bg-card p-5 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition"
             >
-              <div className="aspect-[16/9] rounded-xl bg-gradient-to-br from-primary/10 via-primary-glow/10 to-transparent grid place-items-center border border-border">
-                <c.icon className="h-12 w-12 text-primary" />
+              <div className="aspect-[16/9] rounded-xl bg-gradient-to-br from-primary/10 via-primary-glow/10 to-transparent grid place-items-center border border-border overflow-hidden">
+                {c.photo ? (
+                  <img
+                    src={c.photo}
+                    alt={`${c.title} certificate`}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <c.icon className="h-12 w-12 text-primary" />
+                )}
               </div>
               <div className="mt-4 flex items-start justify-between gap-3">
                 <div>
