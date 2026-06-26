@@ -33,23 +33,23 @@ const groups = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-card/40">
+    <section id="skills" className="py-32 bg-background">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="Skills" title="Technologies I work with" />
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
+        <div className="mt-16 grid md:grid-cols-3 gap-8">
           {groups.map((g) => (
-            <div key={g.title} className="rounded-2xl border border-border bg-card p-6 shadow-card">
-              <h3 className="font-semibold text-lg">{g.title}</h3>
-              <div className="mt-5 space-y-4">
+            <div key={g.title} className="rounded-3xl border border-border/50 bg-card/20 p-8 hover:bg-card/40 transition-colors duration-300">
+              <h3 className="font-semibold text-xl mb-8">{g.title}</h3>
+              <div className="space-y-6">
                 {g.items.map((it) => (
-                  <div key={it.name}>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-foreground/85">{it.name}</span>
+                  <div key={it.name} className="group">
+                    <div className="flex justify-between text-sm font-medium mb-2">
+                      <span className="text-foreground/90">{it.name}</span>
                       <span className="text-muted-foreground">{it.level}%</span>
                     </div>
-                    <div className="mt-1.5 h-2 rounded-full bg-secondary overflow-hidden">
+                    <div className="h-1.5 rounded-full bg-muted overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-gradient-primary"
+                        className="h-full rounded-full bg-foreground transform origin-left transition-transform duration-1000 ease-out group-hover:scale-x-105"
                         style={{ width: `${it.level}%` }}
                       />
                     </div>

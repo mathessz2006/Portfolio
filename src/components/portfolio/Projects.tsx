@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Cake, GraduationCap } from "lucide-react";
+import { ExternalLink, Github, Cake, GraduationCap, Briefcase, Calculator } from "lucide-react";
 import { SectionHeading } from "./About";
 
 const projects = [
@@ -8,10 +8,9 @@ const projects = [
     description:
       "Full-stack web app with Firebase auth, Firestore database, and Email/SMS reminders with 1–30 days advanced scheduling. Dashboard with search, filter, sort and upcoming birthday views.",
     tech: ["React.js", "Firebase", "Firestore", "GitHub Pages"],
-    live: "https://mathessz2006.github.io/birthday-remind/",
+    live: "https://birthday-app-beryl.vercel.app/",
     repo: "https://github.com/mathessz2006",
     icon: Cake,
-    gradient: "from-pink-500/20 via-rose-400/10 to-orange-300/20",
   },
   {
     title: "E-Learning Management System",
@@ -22,84 +21,80 @@ const projects = [
     live: "",
     repo: "https://github.com/mathessz2006",
     icon: GraduationCap,
-    gradient: "from-indigo-500/20 via-blue-400/10 to-cyan-300/20",
   },
   {
-    title: "Birthday Reminder WebApp",
+    title: "AI job Tracker",
     type: "Self Project",
     description:
       "Full-stack web app with Firebase auth, Firestore database, and Email/SMS reminders with 1–30 days advanced scheduling. Dashboard with search, filter, sort and upcoming birthday views.",
     tech: ["React.js", "Firebase", "Firestore", "GitHub Pages"],
     live: "https://mathessz2006.github.io/birthday-remind/",
     repo: "https://github.com/mathessz2006",
-    icon: Cake,
-    gradient: "from-pink-500/20 via-rose-400/10 to-orange-300/20",
+    icon: Briefcase,
   },
   {
-    title: "Birthday Reminder WebApp",
+    title: "Smart split Bill + calculator",
     type: "Self Project",
-    description:
-      "Full-stack web app with Firebase auth, Firestore database, and Email/SMS reminders with 1–30 days advanced scheduling. Dashboard with search, filter, sort and upcoming birthday views.",
-    tech: ["React.js", "Firebase", "Firestore", "GitHub Pages"],
-    live: "https://mathessz2006.github.io/birthday-remind/",
-    repo: "https://github.com/mathessz2006",
-    icon: Cake,
-    gradient: "from-pink-500/20 via-rose-400/10 to-orange-300/20",
+    description: "Smart Split Bill + Tip Calculator is a clean, mobile-friendly web tool that helps users quickly split bills, add tip, and calculate each person’s share with instant, accurate results. It was built to make shared expenses easier, faster, and less error-prone for everyday use.",
+    tech: ["React.js", "Html","css", "Typescript", "GitHub Pages"],
+    live: "https://portfolio-iota-amber-37.vercel.app/",
+    repo: "https://github.com/mathessz2006/smart-split-calculator.git",
+    icon: Calculator,
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-32 border-t border-border/40">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="Projects" title="Featured work I've built" />
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
+        <div className="mt-16 grid md:grid-cols-2 gap-8">
           {projects.map((p, i) => (
             <article
               key={`${p.title}-${i}`}
-              className="group relative rounded-3xl border border-border bg-card overflow-hidden shadow-card hover:shadow-soft transition"
+              className="group flex flex-col rounded-3xl border border-border/50 bg-card/20 overflow-hidden hover:bg-card/40 transition-colors duration-500"
             >
               <div
-                className={`relative h-44 bg-gradient-to-br ${p.gradient} grid place-items-center`}
+                className="relative h-48 bg-muted/30 grid place-items-center group-hover:bg-muted/50 transition-colors duration-500"
               >
-                <p.icon className="h-16 w-16 text-foreground/70" />
-                <span className="absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-card/80 backdrop-blur px-2.5 py-1 border border-border">
+                <p.icon className="h-14 w-14 text-foreground/40 group-hover:scale-110 group-hover:text-foreground/80 transition-all duration-500" />
+                <span className="absolute top-5 left-5 text-[10px] font-bold uppercase tracking-widest rounded-full bg-background/80 backdrop-blur-md px-3 py-1.5 border border-border/50 text-muted-foreground">
                   {p.type}
                 </span>
               </div>
-              <div className="p-6">
-                <h3 className="font-semibold text-xl">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              <div className="p-8 flex flex-col flex-1">
+                <h3 className="font-semibold text-2xl tracking-tight text-foreground">{p.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">
                   {p.description}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className="mt-6 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-[11px] rounded-full bg-secondary text-secondary-foreground px-2.5 py-1"
+                      className="text-[11px] font-medium rounded-full bg-muted/50 text-foreground/80 px-3 py-1 border border-border/30"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="mt-5 flex items-center gap-3">
+                <div className="mt-8 flex items-center gap-4">
                   {p.live && (
                     <a
                       href={p.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-4 py-2 text-sm font-medium hover:bg-foreground/90 transition-all duration-300 w-full sm:w-auto"
                     >
-                      Live demo <ExternalLink className="h-3.5 w-3.5" />
+                      Live demo <ExternalLink className="h-4 w-4" />
                     </a>
                   )}
                   <a
                     href={p.repo}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-all duration-300 w-full sm:w-auto"
                   >
-                    <Github className="h-3.5 w-3.5" /> Source
+                    <Github className="h-4 w-4" /> Source
                   </a>
                 </div>
               </div>

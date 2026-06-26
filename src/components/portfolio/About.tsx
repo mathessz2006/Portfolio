@@ -17,16 +17,16 @@ const strengths = [
 
 export function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-32 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading eyebrow="About me" title="A motivated front-end developer in the making" />
 
-        <div className="mt-12 grid md:grid-cols-2 gap-10">
-          <div className="space-y-5 text-foreground/85 leading-relaxed">
+        <div className="mt-16 grid md:grid-cols-2 gap-16">
+          <div className="space-y-6 text-foreground/80 leading-relaxed text-lg">
             <p>
               I'm a motivated BCA student with hands-on front-end web development experience,
               including a professional internship at{" "}
-              <span className="font-medium text-foreground">Codebind Technologies</span>. I'm
+              <span className="font-semibold text-foreground">Codebind Technologies</span>. I'm
               passionate about creating clean, user-friendly interfaces and eager to contribute as a
               junior developer.
             </p>
@@ -35,7 +35,7 @@ export function About() {
               web applications using HTML, CSS, JavaScript and React.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-4 pt-4">
+            <div className="grid sm:grid-cols-2 gap-6 pt-6">
               <InfoCard
                 icon={<GraduationCap className="h-5 w-5" />}
                 title="Education"
@@ -53,17 +53,17 @@ export function About() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-5">
             {strengths.map((s) => (
               <div
                 key={s.title}
-                className="rounded-2xl border border-border bg-card p-5 shadow-card hover:shadow-soft transition"
+                className="group rounded-2xl border border-border/50 bg-card p-6 shadow-sm hover:shadow-md hover:border-border transition-all duration-300"
               >
-                <div className="h-10 w-10 rounded-xl bg-gradient-primary text-primary-foreground grid place-items-center">
-                  <s.icon className="h-5 w-5" />
+                <div className="h-12 w-12 rounded-xl bg-muted/50 text-foreground grid place-items-center mb-5 group-hover:scale-110 group-hover:bg-foreground group-hover:text-background transition-all duration-300">
+                  <s.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 font-semibold">{s.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+                <h3 className="font-semibold text-lg">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -83,12 +83,14 @@ function InfoCard({
   lines: string[];
 }) {
   return (
-    <div className="rounded-2xl border border-border bg-card p-5 shadow-card">
-      <div className="flex items-center gap-2 text-primary">
-        {icon}
-        <span className="font-semibold text-foreground">{title}</span>
+    <div className="rounded-2xl border border-border/50 bg-card/50 p-6">
+      <div className="flex items-center gap-3 text-foreground">
+        <div className="p-2 rounded-lg bg-muted text-foreground">
+          {icon}
+        </div>
+        <span className="font-semibold text-base">{title}</span>
       </div>
-      <div className="mt-2 text-sm text-muted-foreground space-y-0.5">
+      <div className="mt-4 text-sm text-muted-foreground space-y-1.5 leading-relaxed">
         {lines.map((l) => (
           <div key={l}>{l}</div>
         ))}
@@ -100,11 +102,11 @@ function InfoCard({
 export function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <div className="max-w-2xl">
-      <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-primary font-semibold">
-        <span className="h-px w-6 bg-primary/60" />
+      <div className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-bold text-muted-foreground">
+        <span className="h-px w-8 bg-muted-foreground/30" />
         {eyebrow}
       </div>
-      <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">{title}</h2>
+      <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-foreground">{title}</h2>
     </div>
   );
 }
